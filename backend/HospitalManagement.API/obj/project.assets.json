@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net8.0": {
       "Humanizer.Core/2.14.1": {
@@ -2729,19 +2729,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\UseR\\.nuget\\packages\\": {}
+    "/home/faysal-hossain/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ASP.NET\\HospitalManagement\\backend\\HospitalManagement.API\\HospitalManagement.API.csproj",
+      "projectUniqueName": "/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/HospitalManagement.API.csproj",
       "projectName": "HospitalManagement.API",
-      "projectPath": "E:\\ASP.NET\\HospitalManagement\\backend\\HospitalManagement.API\\HospitalManagement.API.csproj",
-      "packagesPath": "C:\\Users\\UseR\\.nuget\\packages\\",
-      "outputPath": "E:\\ASP.NET\\HospitalManagement\\backend\\HospitalManagement.API\\obj\\",
+      "projectPath": "/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/HospitalManagement.API.csproj",
+      "packagesPath": "/home/faysal-hossain/.nuget/packages/",
+      "outputPath": "/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\UseR\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/faysal-hossain/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2751,7 +2751,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -2760,17 +2759,10 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "10.0.400"
+      }
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": {
@@ -2815,7 +2807,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.128/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
