@@ -1,23 +1,18 @@
-using System.ComponentModel.DataAnnotations;
 namespace HospitalManagement.API.DTOs.Patient;
 
-public class CreatePatientDto
+public class PatientResponseDto
 {
-    [Required]
-    [MaxLength(100)]
+    public int Id { get; set; }
+
     public string Name { get; set; } = string.Empty;
 
-    [Range(1, 120)]
     public int Age { get; set; }
 
-    [Required]
     public string Gender { get; set; } = string.Empty;
 
-    [Required]
-    [Phone]
     public string Phone { get; set; } = string.Empty;
 
-    [Required]
-    [MaxLength(250)]
     public string Address { get; set; } = string.Empty;
+
+    public DateTime CreatedAt { get; set; }
 }
