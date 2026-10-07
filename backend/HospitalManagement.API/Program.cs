@@ -1,8 +1,16 @@
 using HospitalManagement.API.Data;
 using Microsoft.EntityFrameworkCore;
+using HospitalManagement.API.Repositories;
+using HospitalManagement.API.Repositories.Interfaces;
+using HospitalManagement.API.Services;
+using HospitalManagement.API.Services.Interfaces;
+
+
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+builder.Services.AddScoped<IPatientService, PatientService>();
 
 builder.Services.AddControllers();
 
