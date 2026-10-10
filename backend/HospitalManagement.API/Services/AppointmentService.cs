@@ -2,16 +2,21 @@ using HospitalManagement.API.DTOs.Appointment;
 using HospitalManagement.API.Models;
 using HospitalManagement.API.Repositories.Interfaces;
 using HospitalManagement.API.Services.Interfaces;
+using HospitalManagement.API.Repositories.Interfaces;
 
 namespace HospitalManagement.API.Services;
 
 public class AppointmentService : IAppointmentService
 {
     private readonly IAppointmentRepository _repository;
+    private readonly IPatientRepository _patientRepository;
+    private readonly IDoctorRepository _doctorRepository;
 
-    public AppointmentService(IAppointmentRepository repository)
+    public AppointmentService(IAppointmentRepository repository, IPatientRepository patientRepository, IDoctorRepository doctorRepository)
     {
         _repository = repository;
+        _patientRepository = patientRepository;
+        _doctorRepository = doctorRepository;
     }
 
     public async Task<List<AppointmentResponseDto>> GetAllAsync()
@@ -59,16 +64,37 @@ public class AppointmentService : IAppointmentService
     }
 
     public async Task<AppointmentResponseDto> CreateAsync(
-        CreateAppointmentDto dto)
+    CreateAppointmentDto dto)
     {
+        var patient =
+            await _patientRepository.GetByIdAsync(dto.PatientId);
+
+        if (patient == null)
+            throw new KeyNotFoundException("Patient not found");
+
+        var doctor =
+            await _doctorRepository.GetByIdAsync(dto.DoctorId);
+
+        if (doctor == null)
+            throw new KeyNotFoundException("Doctor not found");
+
+        if (dto.AppointmentDate <= DateTime.UtcNow)
+        {
+            throw new ArgumentException(
+                "Appointment date must be in the future."
+            );
+        }
+        
         var appointment = new Appointment
         {
             PatientId = dto.PatientId,
             DoctorId = dto.DoctorId,
+
             AppointmentDate = DateTime.SpecifyKind(
                 dto.AppointmentDate,
                 DateTimeKind.Utc
             ),
+
             Status = dto.Status
         };
 

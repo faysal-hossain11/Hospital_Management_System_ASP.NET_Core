@@ -13,5 +13,9 @@ public class UpdateAppointmentDto
     public DateTime AppointmentDate { get; set; }
 
     [Required]
+    [RegularExpression(
+        "^(Scheduled|Completed|Cancelled)$",
+        ErrorMessage = "Status must be Scheduled, Completed, or Cancelled."
+    )]
     public string Status { get; set; } = "Scheduled";
 }

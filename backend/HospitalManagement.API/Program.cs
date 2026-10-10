@@ -4,6 +4,7 @@ using HospitalManagement.API.Repositories;
 using HospitalManagement.API.Repositories.Interfaces;
 using HospitalManagement.API.Services;
 using HospitalManagement.API.Services.Interfaces;
+using HospitalManagement.API.Middleware;
 
 
 
@@ -30,7 +31,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontendPolicy", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseCors("FrontendPolicy");
+
 
 // Swagger
 if (app.Environment.IsDevelopment())
