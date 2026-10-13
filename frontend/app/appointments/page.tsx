@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { apiFetch } from "../lib/api";
 
 type Appointment = {
     id: number;
@@ -29,7 +30,7 @@ export default function AppointmentsPage() {
                     throw new Error("API URL is not configured.");
                 }
 
-                const response = await fetch(`${apiUrl}/Appointments`);
+                const response = await apiFetch(`${apiUrl}/Appointments`);
 
                 if (!response.ok) {
                     throw new Error(`Failed to load appointments: ${response.status}`);
@@ -70,7 +71,7 @@ export default function AppointmentsPage() {
                 throw new Error("API URL is not configured.");
             }
 
-            const response = await fetch(`${apiUrl}/Appointments/${id}`, {
+            const response = await apiFetch(`${apiUrl}/Appointments/${id}`, {
                 method: "DELETE",
             });
 

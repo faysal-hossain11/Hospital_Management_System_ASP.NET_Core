@@ -9,6 +9,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { apiFetch } from "@/app/lib/api";
 
 type Patient = {
   id: number;
@@ -71,9 +72,9 @@ export default function EditAppointmentPage() {
 
         const [appointmentResponse, patientResponse, doctorResponse] =
           await Promise.all([
-            fetch(`${apiUrl}/Appointments/${id}`),
-            fetch(`${apiUrl}/Patients`),
-            fetch(`${apiUrl}/Doctors`),
+            apiFetch(`${apiUrl}/Appointments/${id}`),
+            apiFetch(`${apiUrl}/Patients`),
+            apiFetch(`${apiUrl}/Doctors`),
           ]);
 
         if (
@@ -157,7 +158,7 @@ export default function EditAppointmentPage() {
         throw new Error("Appointment date must be in the future.");
       }
 
-      const response = await fetch(`${apiUrl}/Appointments/${id}`, {
+      const response = await apiFetch(`${apiUrl}/Appointments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

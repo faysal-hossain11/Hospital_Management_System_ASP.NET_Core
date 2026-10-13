@@ -9,6 +9,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { apiFetch } from "@/app/lib/api";
 
 type PatientForm = {
   name: string;
@@ -44,7 +45,7 @@ export default function EditPatientPage() {
           throw new Error("API URL is not configured.");
         }
 
-        const response = await fetch(`${apiUrl}/Patients/${id}`);
+        const response = await apiFetch(`${apiUrl}/Patients/${id}`);
 
         if (!response.ok) {
           throw new Error(`Failed to load patient: ${response.status}`);
@@ -98,7 +99,7 @@ export default function EditPatientPage() {
         throw new Error("API URL is not configured.");
       }
 
-      const response = await fetch(`${apiUrl}/Patients/${id}`, {
+      const response = await apiFetch(`${apiUrl}/Patients/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

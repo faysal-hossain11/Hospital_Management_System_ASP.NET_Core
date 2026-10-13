@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { apiFetch } from "./lib/api";
 
 
 
@@ -37,7 +38,7 @@ export default function Home() {
       setCount: (count: number) => void
     ) {
       try {
-        const response = await fetch(
+        const response = await apiFetch(
           `${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`
         );
 

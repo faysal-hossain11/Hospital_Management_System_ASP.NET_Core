@@ -318,3 +318,11 @@ E:/ASP.NET/HospitalManagement/backend/HospitalManagement.API/bin/Debug/net8.0/zh
 /home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/obj/Debug/net8.0/HospitalManagement.API.pdb
 /home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/obj/Debug/net8.0/HospitalManagement.API.genruntimeconfig.cache
 /home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/obj/Debug/net8.0/ref/HospitalManagement.API.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/faysal-hossain/Downloads/ASP.Net/Hospital_Management_System_ASP.NET_Core/backend/HospitalManagement.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

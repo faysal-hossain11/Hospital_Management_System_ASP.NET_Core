@@ -4,6 +4,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { apiFetch } from "@/app/lib/api";
 
 export default function NewDoctorPage() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function NewDoctorPage() {
         throw new Error("API URL is not configured.");
       }
 
-      const response = await fetch(`${apiUrl}/Doctors`, {
+      const response = await apiFetch(`${apiUrl}/Doctors`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

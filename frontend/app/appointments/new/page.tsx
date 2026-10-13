@@ -4,6 +4,7 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { apiFetch } from "@/app/lib/api";
 
 type Patient = {
   id: number;
@@ -44,8 +45,8 @@ export default function NewAppointmentPage() {
         }
 
         const [patientResponse, doctorResponse] = await Promise.all([
-          fetch(`${apiUrl}/Patients`),
-          fetch(`${apiUrl}/Doctors`),
+          apiFetch(`${apiUrl}/Patients`),
+          apiFetch(`${apiUrl}/Doctors`),
         ]);
 
         if (!patientResponse.ok || !doctorResponse.ok) {
@@ -109,7 +110,7 @@ export default function NewAppointmentPage() {
         throw new Error("Appointment date must be in the future.");
       }
 
-      const response = await fetch(`${apiUrl}/Appointments`, {
+      const response = await apiFetch(`${apiUrl}/Appointments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
